@@ -1,3 +1,3 @@
 class Solution {
-    fun solution(x: Int, n: Int) = LongArray(n) { (x.toLong() * (it + 1)) }
+    fun solution(x: Int, n: Int) = LongArray(n) { x.toLong() * (it + 1) }
 }
