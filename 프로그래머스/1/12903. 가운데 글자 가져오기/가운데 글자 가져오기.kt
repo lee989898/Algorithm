@@ -1,7 +1,3 @@
 class Solution {
-    fun solution(s: String) = if (s.length % 2 == 0) {
-        "${s[s.length / 2 - 1]}${s[s.length / 2]}"
-    } else {
-        "${s[s.length / 2]}"
-    }
+    fun solution(s: String) = s.slice((s.length - 1) / 2..s.length / 2)
 }
