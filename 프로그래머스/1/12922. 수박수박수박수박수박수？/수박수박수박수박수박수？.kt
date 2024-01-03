@@ -1,3 +1,3 @@
 class Solution {
-    fun solution(n: Int) = (1..n).joinToString("") { if (it % 2 != 0) "수" else "박" }
+    fun solution(n: Int): String = Array(n) { i -> if (i % 2 == 0) "수" else "박" }.joinToString("")
 }
