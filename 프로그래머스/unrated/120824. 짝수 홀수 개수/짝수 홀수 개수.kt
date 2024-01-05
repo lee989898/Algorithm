@@ -1,3 +1,3 @@
 class Solution {
-    fun solution(num_list: IntArray) = num_list.run { intArrayOf(this.count { it % 2 == 0}, this.count { it % 2 != 0} ) }
+    fun solution(num_list: IntArray) = intArrayOf(num_list.count { it % 2 == 0 }, num_list.count { it % 2 != 0 })
 }
