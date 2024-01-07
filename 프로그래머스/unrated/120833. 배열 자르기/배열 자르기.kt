@@ -1,3 +1,3 @@
 class Solution {
-    fun solution(numbers: IntArray, num1: Int, num2: Int) = numbers.toList().slice(num1..num2)
+    fun solution(numbers: IntArray, num1: Int, num2: Int) = numbers.sliceArray(num1..num2)
 }
