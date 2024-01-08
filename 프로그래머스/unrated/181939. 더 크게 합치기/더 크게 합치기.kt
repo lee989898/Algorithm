@@ -1,7 +1,5 @@
+import kotlin.math.max
+
 class Solution {
-    fun solution(a: Int, b: Int) = if ("$a$b" >= "$b$a") {
-        "$a$b"
-    } else {
-        "$b$a"
-    }.toInt()
+    fun solution(a: Int, b: Int) = max("$a$b".toInt(), "$b$a".toInt())
 }
