@@ -1,19 +1,10 @@
 class Solution {
-    fun solution(n: Int): IntArray {
-        var answer: IntArray = intArrayOf()
-        var copyN = n
-
-        while (copyN != 1) {
-            answer += copyN
-
-            if (copyN % 2 == 0) {
-                copyN /= 2
-            } else {
-                copyN = 3 * copyN + 1
-            }
+    fun solution(n: Int) = generateSequence(n) {
+        when {
+            it == 1 -> null
+            it % 2 == 0 -> it / 2
+            it % 2 != 0 -> 3 * it + 1
+            else -> throw IllegalArgumentException()
         }
-        answer += copyN
-
-        return answer
-    }
+    }.toList()
 }
