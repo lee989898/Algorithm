@@ -1,6 +1,3 @@
 class Solution {
-    fun solution(age: Int): String {
-        val alphabet = ('a'..'j').toList()
-        return age.toString().map { alphabet[it.digitToInt()] }.joinToString("")
-    }
+    fun solution(age: Int) = age.toString().map { (49 + it.toInt()).toChar() }.joinToString("")
 }
