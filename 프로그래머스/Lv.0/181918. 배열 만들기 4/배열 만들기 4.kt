@@ -4,10 +4,7 @@ class Solution {
         var i = 0
 
         while (i < arr.size) {
-            if (stk.isEmpty()) {
-                stk += arr[i]
-                i++
-            } else if (stk.last() < arr[i]) {
+            if (stk.isEmpty() || stk.last() < arr[i]) {
                 stk += arr[i]
                 i++
             } else {
