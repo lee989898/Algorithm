@@ -1,16 +1,12 @@
 class Solution {
     fun solution(cards1: Array<String>, cards2: Array<String>, goal: Array<String>): String {
-        var copyCards1 = cards1.toList()
-        var copyCards2 = cards2.toList()
+        var cards1Index = 0
+        var cards2Index = 0
 
-        for (index in goal.indices) {
-            if (copyCards1.isNotEmpty() && goal[index] == copyCards1.first()) {
-                copyCards1 = copyCards1.drop(1)
-            } else if (copyCards2.isNotEmpty() && goal[index] == copyCards2.first()) {
-                copyCards2 = copyCards2.drop(1)
-            } else {
-                return "No"
-            }
+        goal.forEachIndexed { index, s ->
+            if (cards1Index < cards1.size && cards1[cards1Index] == s) cards1Index++
+            else if (cards2Index < cards2.size && cards2[cards2Index] == s) cards2Index++
+            else return "No"
         }
 
         return "Yes"
