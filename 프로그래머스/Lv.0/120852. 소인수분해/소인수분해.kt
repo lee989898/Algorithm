@@ -4,6 +4,8 @@ class Solution {
         var copyN = n
 
         for (i in 2..n) {
+            if (copyN == 1) break
+            
             while (copyN % i == 0) {
                 answer += i
                 copyN /= i
