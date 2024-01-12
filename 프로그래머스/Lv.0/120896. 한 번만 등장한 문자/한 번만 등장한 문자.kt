@@ -1,4 +1,6 @@
 class Solution {
-    fun solution(s: String) =
-        s.toCharArray().groupBy { it }.filter { it.value.size == 1 }.flatMap { it.value }.sorted().joinToString("")
+    fun solution(s: String) = s.toSet()
+        .filter { uniqueChar ->
+            s.count { it == uniqueChar } == 1
+        }.sorted().joinToString("")
 }
