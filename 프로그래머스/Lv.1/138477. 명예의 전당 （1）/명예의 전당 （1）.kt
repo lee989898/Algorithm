@@ -2,18 +2,17 @@ import java.util.*
 
 class Solution {
     fun solution(k: Int, score: IntArray): IntArray {
-        val answer = LinkedList<Int>()
-        var result = intArrayOf()
+        var answer = intArrayOf()
+        val pq = PriorityQueue<Int>()
 
-        score.forEach {
-            answer += it
-            answer.sort()
-            if (answer.size > k) {
-                answer.remove()
+        for (item in score) {
+            pq.add(item)
+
+            if (pq.size > k) {
+                pq.poll()
             }
-            result += answer.take(1)
+            answer += pq.peek()
         }
-
-        return result
+        return answer
     }
 }
