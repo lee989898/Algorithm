@@ -1,17 +1,7 @@
 class Solution {
-    fun solution(common: IntArray): Int {
-        val map = common.mapIndexed { index, i ->
-            if (index == 0) {
-                i
-            } else {
-                common[index] - common[index - 1]
-            }
-        }
-
-        return if (map[1] == map[2]) {
-            common.last() + map[1]
-        } else {
-            common.last() * (map[2] / map[1])
-        }
+    fun solution(common: IntArray) = if (common[2] - common[1] == common[1] - common[0]) {
+        common.last() + (common[1] - common[0])
+    } else {
+        common.last() * (common[1] / common[0])
     }
 }
