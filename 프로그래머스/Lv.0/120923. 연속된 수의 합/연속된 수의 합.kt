@@ -1,10 +1,10 @@
 class Solution {
     fun solution(num: Int, total: Int): List<Int> {
-        (-1000..1000).forEach {
-            if ((it until it + num).sum() == total) {
-                return (it until it + num).sorted()
-            }
-        }
-        return listOf()
+        val center = total / num
+        return if(num % 2 == 0) {
+            (center - (num / 2 - 1) .. center + num / 2)
+        } else {
+            (center - (num - 1) / 2 .. center + (num - 1) / 2)
+        }.toList()
     }
 }
